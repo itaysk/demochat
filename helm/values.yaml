@@ -1,0 +1,24 @@
+# Default values for demoservice1.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+appversion: 9
+image:
+  name: containers101/demochat
+  pullPolicy: Always
+service:
+  name: demochat
+  type: LoadBalancer
+  externalPort: 80
+  internalPort: 5000
+commit:
+  sha: "1234"
+  branch: "master"
+  repo : "jennyps/demochat"
+ingress:
+  enabled: false
+  hosts:
+    - chart-example.local
+  annotations:
+  tls:
+resources: {}
